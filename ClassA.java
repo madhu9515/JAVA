@@ -5,7 +5,8 @@ public class ClassA {
         System.out.println("End");
     }
 
-    int meth2(int a, int b, int c) {
+    int meth2(int a, int b, int c) // called by meth4
+    {
         System.out.println(a);
         ClassA obj = new ClassA();
         String s = obj.meth5(100, "java");
@@ -18,14 +19,16 @@ public class ClassA {
         return s;
     }
 
-    int meth4(int c, int k) {
+    int meth4(int c, int k) // called by main meth
+    {
         System.out.println(k);
         ClassA obj = new ClassA();
         int result = obj.meth2(50, 50, 50);
         return k + 10;
     }
 
-    String meth5(int a, String L) {
+    String meth5(int a, String L)// called by meth2
+    {
         System.out.println(a + a);
         ClassA obj = new ClassA();
         String s = obj.meth3("Hi", 15, 10);
